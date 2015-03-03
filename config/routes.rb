@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root to:'static_pages#home'
+root'static_pages#home'
+
+  get 'about' => 'static_pages#about', as: 'about'
+  devise_for :users
 
   resources :genres 
 
