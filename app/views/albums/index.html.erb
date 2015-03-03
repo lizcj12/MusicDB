@@ -2,7 +2,7 @@
 
 <h1>Listing Albums</h1>
 
-<table>
+<table class="table table-striped">>
   <thead>
     <tr>
       <th>Title</th>
@@ -16,13 +16,14 @@
     <% @albums.each do |album| %>
       <tr>
         <td><%= album.title %></td>
+        <td><%= image_tag(album.cover, width: 200, height: 200) %></td>)
         <td><%= album.genre_id%></td>
         <td><%= album.artist_id%></td>
         <td><%= album.genre.name%></td>
         <td><%= album.artist.name%></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', album, :class =>'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_album_path(album), :class =>'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', album, :class =>'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +31,6 @@
 
 <br>
 
-<%= link_to 'New Album', new_album_path %>
+<%= link_to 'New Album', new_album_path, :class =>'btn btn-primary' %>
+<%=will_paginate @albums, renderer:BootstrapPagination::Rails %>
+

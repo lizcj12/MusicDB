@@ -1,2 +1,30 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1>Music Database Home</h1>
+<p>Welcome to the MusicDB homepage.</p>
+ 
+<!DOCTYPE html>
+<html>
+<body background='http://bucurestifm.ro/wp-content/uploads/sites/2/2014/10/muzica1.jpg'>
+    
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "About",   '#' %></li>
+            <li><%= link_to "Genres",   'genres#index.html.erb' %></li>
+            <li><%= link_to "Artists", '#' %></li>
+            <li><%= link_to "Albums", '#' %></li>
+            <li><%= link_to "Songs", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <div>
+      backgr
+
+
+  </body>
+</html>

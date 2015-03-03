@@ -2,7 +2,7 @@
 
 <h1>Listing Artists</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -19,9 +19,9 @@
         <td><%= artist.bio %></td>
         <td><%= artist.genre_id %></td>
          <td><%= artist.genre.name %></td>
-        <td><%= link_to 'Show', artist %></td>
-        <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-        <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', artist, :class =>'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_artist_path(artist), :class =>'btn btn-warning'%></td>
+        <td><%= link_to 'Destroy', artist,:class =>'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +29,5 @@
 
 <br>
 
-<%= link_to 'New Artist', new_artist_path %>
+<%= link_to 'New Artist', new_artist_path, :class =>'btn btn-primary' %>
+<%=will_paginate @artists, renderer:BootstrapPagination::Rails %>

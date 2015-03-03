@@ -2,7 +2,7 @@
 
 <h1>Listing Genres</h1>
 
-<table>
+<table class="table table-striped"
   <thead>
     <tr>
        <th>Type</th>
@@ -16,9 +16,9 @@
       <tr>
         
         <td><%= genre.name %></td>
-        <td><%= link_to 'Show', genre %></td>
-        <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
-        <td><%= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', genre, :class =>'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_genre_path(genre), :class =>'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', genre, :class =>'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,5 @@
 
 <br>
 
-<%= link_to 'New Genre', new_genre_path %>
+<%= link_to 'New Genre', new_genre_path, :class =>'btn btn-primary' %>
+<%=will_paginate @genres, renderer:BootstrapPagination::Rails %>

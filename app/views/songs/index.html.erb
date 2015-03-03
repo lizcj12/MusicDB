@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Songs</h1>
+<h1 background-color: >Listing Songs</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,9 +20,9 @@
         <td><%= song.genre.name %></td>
         <td><%= song.artist.name %></td>
          <td><%= song.album.title %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', song, :class =>'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_song_path(song), :class => 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', song, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,5 @@
 
 <br>
 
-<%= link_to 'New Song', new_song_path %>
+<%= link_to 'New Song', new_song_path, :class =>'btn btn-primary' %>
+<%=will_paginate @songs, renderer:BootstrapPagination::Rails %>
