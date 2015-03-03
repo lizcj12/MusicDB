@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'activeadmin'
 gem 'devise'
 gem 'friendly_id', '~>5.1.0'
 gem 'will_paginate-bootstrap' 
